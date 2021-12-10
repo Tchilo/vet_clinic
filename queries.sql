@@ -21,3 +21,47 @@ SELECT name, escape_attempts FROM animals WHERE escape_attempts = (SELECT MAX(es
 SELECT species, MAX(weight_kg), MIN(weight_kg) from animals GROUP BY species;
 
 SELECT species, AVG(escape_attempts) FROM animals WHERE date_of_birth BETWEEN '01/01/1990' AND '01/01/2000' GROUP BY species;
+
+
+-- Melody Pond's pets 
+SELECT name
+FROM animals
+JOIN owners ON animals.owner_id = owners.id
+WHERE full_name = 'Melody Pond';
+
+-- pokemon species
+SELECT animals.name
+FROM animals
+JOIN species ON animals.species_id = species.id
+WHERE species.name = 'Pokemon';
+
+-- who have pets and who don't
+SELECT animals.name, owners.full_name
+FROM owners
+LEFT JOIN animals ON owners.id = animals.owner_id;
+
+-- animals per species
+SELECT species.name, COUNT(species.name)
+FROM animals
+JOIN species ON animals.species_id = species.id
+GROUP BY species.name;
+
+-- Jennifer Orwell's digimon pets
+SELECT animals.name, owners.full_name, species.name
+FROM animals
+JOIN species ON animals.species_id = species.id
+JOIN owners ON owners.id = animals.owner_id
+WHERE owners.full_name = 'Jennifer Orwell' AND species.name = 'Digimon';
+
+-- Dean Winchester's escape pets 
+SELECT animals.name, owners.full_name, animals.escape_attempts
+FROM animals
+JOIN owners ON owners.id = animals.owner_id
+WHERE owners.full_name = 'Dean Winchester' AND animals.escape_attempts = 0;
+
+-- who has a lot of pets
+
+SELECT owners.full_name, COUNT(animals.name)
+FROM animals
+JOIN owners ON owners.id = animals.owner_id
+GROUP BY owners.full_name;
