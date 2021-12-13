@@ -2,39 +2,39 @@
 
 -- owners info
 INSERT INTO owners (full_name, age )
-VALUES ('Sam Smith', 34),
-VALUES ('Jennifer Orwell', 19),
-VALUES ('Bob', 45),
-VALUES ('Melody Pond', 77),
-VALUES ('Dean Winchester', 14),
+VALUES ('Sam Smith', 34)
+VALUES ('Jennifer Orwell', 19)
+VALUES ('Bob', 45)
+VALUES ('Melody Pond', 77)
+VALUES ('Dean Winchester', 14)
 VALUES ('Jodie Whittaker', 38);
 
 -- species info
 INSERT INTO species (name)
-values('Pokemon'),
+VALUES('Pokemon'),
 VALUES('Digimon');
 
 -- animal data
 INSERT INTO animals (name, date_of_birth, weight_kg, neutered, escape_attempts, species_id, owner_id)
 VALUES ('Agumon', '02/03/2020', 10.23, true, 0, 2, 1),
-VALUES ('Gabumon', '11/15/2018', 5, true, 2, 2, 2),
-VALUES ('Pikachu', '01/07/2021', 15.04,false, 1, 1,2 ),
-VALUES ('Devimon', '05/12/2017', 11, true, 5, 2,3),
-values('Charmander', '02/08/2020', 11, false, 0, 1, 4),
-values('Plantmon', '15/11/2022', 5.7, true, 2,2,3),
-values('Squirtle', '02/04/1993', 12.13, false, 3,1,4),
-values('Angemon', '12/01/2005', 45, true, 1,2,5),
-values('Boarmon', '07/06/2005', 20.4, true, 7,2,5),
-values('Blossom', '13/10/1998', 17, true, 3,1,4);
+ ('Gabumon', '15/11/2018', 5, true, 2, 2, 2),
+ ('Pikachu', '01/07/2021', 15.04,false, 1, 1,2 ),
+ ('Devimon', '05/12/2017', 11, true, 5, 2,3),
+('Charmander', '02/08/2020', 11, false, 0, 1, 4),
+('Plantmon', '15/11/2022', 5.7, true, 2,2,3),
+('Squirtle', '02/04/1993', 12.13, false, 3,1,4),
+('Angemon', '12/01/2005', 45, true, 1,2,5),
+('Boarmon', '07/06/2005', 20.4, true, 7,2,5),
+('Blossom', '13/10/1998', 17, true, 3,1,4);
 
 -- vets
 
 INSERT INTO vets (name, age, date_of_graduation)
 VALUES
-  ('William Tatcher', 45, '2000-4-23'),
-  ('Maisy Smith', 26, '2019-1-17'),
-  ('Stephanie Mendez', 64, '1981-5-4'),
-  ('Jack Harkness', 38, '2008-6-8');
+  ('William Tatcher', 45, '23/04/2000'),
+  ('Maisy Smith', 26, '17/1/2019'),
+  ('Stephanie Mendez', 64, '04/05/1981'),
+  ('Jack Harkness', 38, '08/06/2008');
 
   INSERT INTO specializations (species_id, vet_id)
 VALUES
