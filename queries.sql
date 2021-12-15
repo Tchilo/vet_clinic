@@ -149,3 +149,15 @@ JOIN species ON animals.species_id = species.id
 WHERE vets.name = 'Maisy Smith'
 GROUP BY species.name
 ORDER BY COUNT(species.name) DESC LIMIT 1;
+
+/* BEFORE CHANGES (indices) */
+EXPLAIN ANALYZE SELECT COUNT(*) FROM visits where animals_id = 4; /* 1787 ms */
+EXPLAIN ANALYZE SELECT * FROM visits where vets_id = 2; /* 600ms */
+EXPLAIN ANALYZE SELECT * FROM owners where email = 'owner_18327@mail.com'; /* 3000+ms */
+
+/* AFTER CHANGES (indices) */
+
+EXPLAIN ANALYZE SELECT COUNT(*) FROM visits where animals_id = 4; /* 786ms */
+EXPLAIN ANALYZE SELECT * FROM visits where vets_id = 2; 
+/* 843ms */
+EXPLAIN ANALYZE SELECT * FROM owners where email = 'owner_18327@mail.com'; /* 0.076 ms */ 

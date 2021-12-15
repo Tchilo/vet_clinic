@@ -2,7 +2,7 @@
 
 > This project is about a vet clinic database that stores information about the animals information in a table. Data can be added and removed, updated and deleted as well as queried. 
 
-
+![](vetClinic.drawio.png)
 
 ## Getting Started
 
